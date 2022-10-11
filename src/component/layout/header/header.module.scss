@@ -1,0 +1,11 @@
+@import '../../../style/variables';
+
+.header {
+    background: $bg-color;
+    display: flex;
+    align-items: center;
+    padding: 1rem 4rem;
+    & svg {
+        fill: white;
+    };
+}

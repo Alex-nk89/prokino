@@ -1,0 +1,1 @@
+export const carousel_card: string

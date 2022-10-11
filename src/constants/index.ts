@@ -1,0 +1,1 @@
+export const bgColor: string = '#161c24'
