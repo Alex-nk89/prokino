@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/alex-nk89/static/css/main.8bc50b16.css",
+    "main.js": "/alex-nk89/static/js/main.462810e1.js",
+    "static/js/787.62e611fb.chunk.js": "/alex-nk89/static/js/787.62e611fb.chunk.js",
+    "static/media/SFUIDisplay-Light.woff": "/alex-nk89/static/media/SFUIDisplay-Light.c6860a788d121eef79b4.woff",
+    "static/media/SFUIDisplay-Medium.woff": "/alex-nk89/static/media/SFUIDisplay-Medium.d2d5d05fb447c5d7853c.woff",
+    "static/media/SFUIDisplay-Bold.woff": "/alex-nk89/static/media/SFUIDisplay-Bold.aee3e2b037ed6cc3cdf9.woff",
+    "static/media/SFUIDisplay-Regular.woff": "/alex-nk89/static/media/SFUIDisplay-Regular.83ecbdc39e4e4e337b56.woff",
+    "index.html": "/alex-nk89/index.html",
+    "main.8bc50b16.css.map": "/alex-nk89/static/css/main.8bc50b16.css.map",
+    "main.462810e1.js.map": "/alex-nk89/static/js/main.462810e1.js.map",
+    "787.62e611fb.chunk.js.map": "/alex-nk89/static/js/787.62e611fb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8bc50b16.css",
+    "static/js/main.462810e1.js"
+  ]
+}
