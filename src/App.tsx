@@ -14,7 +14,7 @@ function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/film/:kinopoiskId' element={<Film />} />
                 </Routes>
-                <div> test ci/cd</div>
+                <div> test ci/cd 1</div>
             </Container>
         </>
     );
