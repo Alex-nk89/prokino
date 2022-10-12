@@ -5,12 +5,12 @@ interface Props {
 }
 
 const settings = {
-    dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
+    autoplaySpeed: 5000,
     draggable: true,
     responsive: [
         {
@@ -18,6 +18,8 @@ const settings = {
             settings: {
                 slidesToShow: 1,
                 adaptiveHeight: true,
+                arrows: false,
+                fade: true,
             },
         },
     ],

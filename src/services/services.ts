@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { IPremiere } from '../models';
+import { IFilm, IPremiere } from '../models';
 
 const API_URL = 'https://kinopoiskapiunofficial.tech/api';
 
@@ -30,5 +30,14 @@ export const FilmServices = {
                 month: months[month]
             }
         })
-    } 
+    },
+    getFilm: async (kinopoiskId: number) => {
+        return axios<IFilm>({
+            url: `v2.2/films/${kinopoiskId}`,
+            headers: {
+                'X-API-KEY': '70b23d2e-8d30-4bd6-ad84-b3addb39fa44',
+                'Content-Type': 'application/json',
+            },
+        })
+    }
 }
