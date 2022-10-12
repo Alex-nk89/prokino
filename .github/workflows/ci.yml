@@ -27,6 +27,11 @@ jobs:
               run: npm run build
 
             - name: deploy
-              run: git config --global user.name "alex-nk89"
+              run: |
+                  git config --global user.name "alex-nk89"
                   git config --global user.email "nagaytsev_ae@vk.com"
                   npm run deploy
+              env:
+                  user_name: 'github-actions[bot]'
+                  user_email: 'github-actions[bot]@users.noreply.github.com'
+                  repository: ${{ github.repository }}
