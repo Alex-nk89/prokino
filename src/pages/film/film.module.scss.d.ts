@@ -1,0 +1,1 @@
+export const film_wrapper: string;
