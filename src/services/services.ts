@@ -33,7 +33,7 @@ export const FilmServices = {
     },
     getFilm: async (kinopoiskId: number) => {
         return axios<IFilm>({
-            url: `v2.2/films/${kinopoiskId}`,
+            url: `v2.2/films1/${kinopoiskId}`,
             headers: {
                 'X-API-KEY': '70b23d2e-8d30-4bd6-ad84-b3addb39fa44',
                 'Content-Type': 'application/json',
