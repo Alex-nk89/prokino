@@ -1,8 +1,8 @@
 import { Skeleton, Typography } from '@mui/material';
 
 interface ITitle {
-    isLoading: boolean;
-    title: string;
+    isLoading?: boolean;
+    title?: string;
 }
 
 export const PageTitle: React.FC<ITitle> = ({ isLoading, title }) => {

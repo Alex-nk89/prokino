@@ -1,5 +1,66 @@
 .film_wrapper {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 1rem 0;
+    &_header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    //     &_cover {
+    //         position: relative;
+    //         width: 100%;
+    //         img {
+    //             width: inherit;
+    //             object-fit: contain;
+    //             border-radius: 8px;
+    //         }
+    //         &_title {
+    //             position: absolute;
+    //             display: flex;
+    //             flex-direction: column;
+    //             justify-content: center;
+    //             align-items: flex-end;
+    //             width: 100%;
+    //             height: 7rem;
+    //             bottom: 0;
+    //             padding: 1rem 2rem;
+    //             background: rgb(0, 0, 0, .4);
+    //         }
+    //     }
+        
+    // }
+
+
+    
+    // &_header {
+    //     div {
+    //         display: flex;
+    //         @media(max-width: 600px) {
+    //             flex-direction: column;
+    //         }
+    //     }
+    //     &_poster {
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         padding: 2rem 0;
+    //         img {
+    //             max-height: 300px;
+    //             border-radius: 8px;
+    //             @media(max-width: 600px) {
+    //                 max-height: none;
+    //                 width: 100%;
+    //             }
+    //         }
+    //     }
+    //     &_details {
+    //         width: 100%;
+    //         padding: 2rem 0 2rem 2rem;
+    //         @media(max-width: 600px) {
+    //             padding: 0;
+    //         }
+    //     }
+    // }
 }

@@ -1,0 +1,16 @@
+.cover {
+    width: 100%;
+    &_details {
+        display: flex;
+        padding: 2rem 0;
+        gap: 2rem;
+        
+        @media(max-width: 600px) {
+            flex-direction: column;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    }
+}

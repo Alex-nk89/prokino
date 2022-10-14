@@ -1,0 +1,21 @@
+.cover {
+    position: relative;
+    width: 100%;
+    img {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+    &_title {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        min-height: 7rem;
+        bottom: 6px;
+        padding: 1rem 2rem;
+        border-radius: 0 0 8px 8px;
+        background: rgba(0, 0, 0, .4);
+    }
+}
