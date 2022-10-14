@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/prokino/static/css/main.cd177ef6.css",
-    "main.js": "/prokino/static/js/main.8325d4c0.js",
+    "main.css": "/prokino/static/css/main.2390d70b.css",
+    "main.js": "/prokino/static/js/main.d36577db.js",
     "static/js/787.62e611fb.chunk.js": "/prokino/static/js/787.62e611fb.chunk.js",
     "static/media/SFUIDisplay-Light.woff": "/prokino/static/media/SFUIDisplay-Light.c6860a788d121eef79b4.woff",
     "static/media/SFUIDisplay-Medium.woff": "/prokino/static/media/SFUIDisplay-Medium.d2d5d05fb447c5d7853c.woff",
     "static/media/SFUIDisplay-Bold.woff": "/prokino/static/media/SFUIDisplay-Bold.aee3e2b037ed6cc3cdf9.woff",
     "static/media/SFUIDisplay-Regular.woff": "/prokino/static/media/SFUIDisplay-Regular.83ecbdc39e4e4e337b56.woff",
     "index.html": "/prokino/index.html",
-    "main.cd177ef6.css.map": "/prokino/static/css/main.cd177ef6.css.map",
-    "main.8325d4c0.js.map": "/prokino/static/js/main.8325d4c0.js.map",
+    "main.2390d70b.css.map": "/prokino/static/css/main.2390d70b.css.map",
+    "main.d36577db.js.map": "/prokino/static/js/main.d36577db.js.map",
     "787.62e611fb.chunk.js.map": "/prokino/static/js/787.62e611fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd177ef6.css",
-    "static/js/main.8325d4c0.js"
+    "static/css/main.2390d70b.css",
+    "static/js/main.d36577db.js"
   ]
 }
