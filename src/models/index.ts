@@ -76,3 +76,26 @@ export interface IImageResponse {
 }
 
 export type TypeImagesForFilm = 'STILL' | 'SHOOTING' | 'POSTER' | 'FAN_ART' | 'PROMO' | 'CONCEPT' | 'WALLPAPER' | 'COVER' | 'SCREENSHOT';
+export type TypeFilm = 'FILM' | 'TV_SHOW' | 'VIDEO' | 'MINI_SERIES' | 'TV_SERIES' | 'UNKNOWN'
+
+export interface IFilmSearchByFilters {
+    kinopoiskId: number;
+    imdbId?: string;
+    nameRu?: string;
+    nameEn?: string;
+    nameOriginal?: string;
+    countries: ICountry[];
+    genres: IGenre[];
+    ratingKinopoisk?: number;
+    ratingImdb?: number;
+    year?: number;
+    type: TypeFilm;
+    posterUrl: string;
+    posterUrlPreview: string;
+}
+
+export interface IFilmSearchByFiltersResponse {
+    total: number;
+    totalPages: number;
+    items: IFilmSearchByFilters[]
+}

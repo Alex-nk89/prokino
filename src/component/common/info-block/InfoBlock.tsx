@@ -2,7 +2,7 @@ import { Typography } from '@mui/material';
 import style from './infoBlock.module.scss';
 
 interface Props {
-    children: React.ReactElement;
+    children: React.ReactNode;
     title?: string;
 }
 

@@ -12,10 +12,8 @@ export const FilmImages: React.FC<IFilmImages> = ({ kinopoiskId }) => {
         FilmApi.getFilmImages(kinopoiskId)
     );
 
-    console.log(images?.data.items);
-
     const filmImages = images?.data.items.map((image) => (
-        <div className={style.imageCard}>
+        <div key={image.imgUrl} className={style.imageCard}>
             <img src={image.previewUrl} alt='Кадры из фильма' />
         </div>
     ));
@@ -28,5 +26,9 @@ export const FilmImages: React.FC<IFilmImages> = ({ kinopoiskId }) => {
         return <p>Кадры из фильма отсутствуют...</p>;
     }
 
-    return <Carousel items={filmImages} />;
+    return (
+        <>
+            <Carousel items={filmImages} />
+        </>
+    );
 };

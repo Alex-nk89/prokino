@@ -5,18 +5,27 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import App from './App';
+import App from './component/app/App';
 
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            refetchOnWindowFocus: false,
+        },
+    },
+});
 
 const theme = createTheme({
     typography: {
         fontFamily: ['SF UI Text', '-apple-system', 'Roboto', 'Arial'].join(
             ','
         ),
+    },
+    palette: {
+        mode: 'dark',
     },
 });
 

@@ -1,12 +1,13 @@
 import { NavLink } from 'react-router-dom';
+import React, { FC } from "react";
 import { Toolbar, Box } from '@mui/material';
 import { Logo } from '../../logo/Logo';
-import styles from './header.module.scss';
 import { HeaderLinks } from '../../header-links/HeaderLinks';
+import styles from './header.module.scss';
 
 const logoStyle = { maxWidth: { xs: '150px', md: '200px' } };
 
-export const Header: React.FC = () => {
+export const Header: FC = () => {
     return (
         <header>
             <Toolbar
