@@ -13,7 +13,7 @@ export const FilmImages: React.FC<IFilmImages> = ({ kinopoiskId }) => {
     );
 
     const filmImages = images?.data.items.map((image) => (
-        <div key={image.imgUrl} className={style.imageCard}>
+        <div key={image.previewUrl} className={style.imageCard}>
             <img src={image.previewUrl} alt='Кадры из фильма' />
         </div>
     ));

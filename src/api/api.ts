@@ -49,7 +49,6 @@ export const FilmApi = {
         })
     },
     getSearchedFilms: async (keyword: string, page: number, abortController: AbortController) => {
-
         return axios<IFilmSearchByFiltersResponse>({
             url: 'v2.2/films',
             headers,
@@ -59,5 +58,5 @@ export const FilmApi = {
             },
             signal: abortController.signal
         })
-    }
+    },
 }

@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const InfoBlock: React.FC<Props> = ({ children, title }) => {
-    const header = title ? <Typography variant='h4'>{title}</Typography> : null;
+    const header = title ? <Typography variant='h5'>{title}</Typography> : null;
 
     return (
         <div className={style.infoBlock}>

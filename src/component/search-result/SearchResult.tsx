@@ -32,14 +32,15 @@ export const SearchResult: FC<ISearchResult> = ({
         <SearchResultItem key={item.kinopoiskId} item={item} />
     ));
 
-    const pagination = isFetching ? null : (
-        <Pagination
-            count={result?.data.totalPages}
-            shape='rounded'
-            page={page}
-            onChange={pageHandler}
-        />
-    );
+    const pagination =
+        isFetching || result?.data.totalPages === 1 ? null : (
+            <Pagination
+                count={result?.data.totalPages}
+                shape='rounded'
+                page={page}
+                onChange={pageHandler}
+            />
+        );
 
     if (isFetching) {
         return <Skeleton height={150} variant='rounded' animation='wave' />;

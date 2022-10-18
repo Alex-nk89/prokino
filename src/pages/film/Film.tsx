@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
+import { useMemo, FC } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import { AxiosError } from 'axios';
-import { useMediaQuery } from '@mui/material';
+import { useMediaQuery, Typography } from '@mui/material';
 import { FilmApi } from '../../api/api';
 import { Error } from '../../component/common/error/Error';
 import style from './film.module.scss';
@@ -10,8 +10,12 @@ import { HeaderWithCover } from '../../component/common/header-with-cover/Header
 import { HeaderWithoutCover } from '../../component/common/header-without-cover/HeaderWithoutCover';
 import { InfoBlock } from '../../component/common/info-block/InfoBlock';
 import { FilmImages } from '../../component/film-images/FilmImages';
+import { FilmRating } from '../../component/film-rating/FilmRating';
+import { TabsWrapper } from '../../component/common/tabs-wrapper/TabsWrapper';
 
-export const Film: React.FC = () => {
+const tabsNames = ['Обзор', 'Кадры', 'Рейтинг'];
+
+export const Film: FC = () => {
     const { kinopoiskId } = useParams();
     const {
         data: film,
@@ -39,6 +43,18 @@ export const Film: React.FC = () => {
         [coverUrl, film?.data, matches, nameRu, shortDescription]
     );
 
+    const description = (
+        <Typography variant='body2'>
+            {film?.data.description || 'Описание отсутствует'}
+        </Typography>
+    );
+
+    const tabsContains = [
+        description,
+        <FilmImages kinopoiskId={Number(kinopoiskId)} />,
+        <FilmRating />,
+    ];
+
     if (isError) {
         return <Error error={error as AxiosError} />;
     }
@@ -46,8 +62,12 @@ export const Film: React.FC = () => {
     return (
         <div className={style.film_wrapper}>
             <div className={style.film_wrapper_header}>{header}</div>
+
             <InfoBlock>
-                <FilmImages kinopoiskId={Number(kinopoiskId)} />
+                <TabsWrapper
+                    tabsNames={tabsNames}
+                    tabsContains={tabsContains}
+                />
             </InfoBlock>
         </div>
     );

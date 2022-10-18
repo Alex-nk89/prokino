@@ -1,0 +1,10 @@
+@import '.././../../style/_variables.scss';
+
+.tabContain {
+    padding: 1rem;
+}
+
+.tabPanel {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $bg-color-secondary;
+}
