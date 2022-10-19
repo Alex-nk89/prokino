@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
 import style from './details.module.scss';
 
 export interface IDetail {
@@ -13,20 +14,21 @@ export interface IDetails {
 
 export const Details: React.FC<IDetails> = ({ details, title }) => {
     const detailsList = details.map((detail, i) => (
-        <div key={i}>
-            <div className={style.details_key}>
+        <>
+            <Grid sm={5} xs={6}>
                 <Typography variant='body1'>{detail.key}</Typography>
-            </div>
-            <div className={style.details_value}>
+            </Grid>
+            <Grid sm={7} xs={6}>
                 <Typography variant='body1'>{detail.value}</Typography>
-            </div>
-        </div>
+            </Grid>
+        </>
     ));
 
     return (
         <div className={style.details}>
-            <Typography variant='h4'>{title}</Typography>
-            {detailsList}
+            <Grid container rowSpacing={1} columnSpacing={2}>
+                {detailsList}
+            </Grid>
         </div>
     );
 };

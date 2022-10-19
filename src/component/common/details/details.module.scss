@@ -1,13 +1,3 @@
 .details {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    & > div {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-    }
-    &_key {
-        width: 170px;
-    }
+    word-wrap: break-word;
 }
