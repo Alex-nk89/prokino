@@ -52,7 +52,7 @@ export const Film: FC = () => {
     const tabsContains = [
         description,
         <FilmImages kinopoiskId={Number(kinopoiskId)} />,
-        <FilmRating />,
+        <FilmRating rating={film?.data} />,
     ];
 
     if (isError) {

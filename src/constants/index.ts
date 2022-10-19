@@ -1,6 +1,7 @@
 export const bgColor: string = '#161c24'
 export const MAIN_COLOR: string = '#fa541c'
 export const MAIN_COLOR_HOVER: string = '#b3200e'
+export const SECONDARY_TEXT_COLOR = '#919eab'
 export const BGCOLOR_INPUT: string = '#919eab14'
 export const BGCOLOR_INPUT_HOVER: string = '#919eab29'
 export const BGCOLOR_INPUT_FOCUSED: string = '#919eab3d'

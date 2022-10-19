@@ -1,3 +1,36 @@
-.film_wrapper {
+@import '../../style/variables';
+
+.rating_wrapper {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    svg {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+    &__critic {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        &__rating_details {
+            display: flex;
+            flex-direction: column;
+            svg {
+                color: $main-color;
+            }
+            @media(min-width: 600px) {
+                flex-direction: row;
+                gap: 1rem;
+            }
+            &__voites {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: .3rem;
+            }
+        }
+    }
 }
