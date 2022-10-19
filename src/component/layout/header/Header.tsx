@@ -1,5 +1,5 @@
+import React, { FC, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import React, { FC } from "react";
 import { Toolbar, Box } from '@mui/material';
 import { Logo } from '../../logo/Logo';
 import { HeaderLinks } from '../../header-links/HeaderLinks';
@@ -8,12 +8,31 @@ import styles from './header.module.scss';
 const logoStyle = { maxWidth: { xs: '150px', md: '200px' } };
 
 export const Header: FC = () => {
+    const [isOffset, setIsOffset] = useState(false);
+
+    const offsetHandler = () => {
+        const offset = window.pageYOffset;
+
+        offset > 100 ? setIsOffset(true) : setIsOffset(false);
+    };
+
+    useEffect(() => {
+        document.addEventListener('scroll', offsetHandler);
+
+        return document.addEventListener('scroll', offsetHandler);
+    }, []);
+
     return (
-        <header>
+        <header className={styles.header}>
             <Toolbar
                 component='nav'
-                className={styles.header}
-                sx={{ maxHeight: { xs: '4rem', md: '6rem' } }}
+                className={styles.header__nav}
+                sx={{
+                    height: {
+                        xs: isOffset ? '2rem' : '4rem',
+                        md: isOffset ? '2rem' : '5rem',
+                    },
+                }}
             >
                 <NavLink to='/'>
                     <Box sx={logoStyle}>

@@ -11,7 +11,11 @@ function App() {
         <>
             <Header />
 
-            <Container maxWidth='md' className={style.container}>
+            <Container
+                maxWidth='md'
+                className={style.container}
+                sx={{ paddingTop: '8rem' }}
+            >
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/film/:kinopoiskId' element={<Film />} />

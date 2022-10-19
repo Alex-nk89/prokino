@@ -1,11 +1,18 @@
 @import '../../../style/variables';
 
 .header {
+    position: fixed;
+    width: 100%;
+    padding: .5rem;
     background: $bg-color;
-    display: flex;
-    align-items: center;
-    padding: 1rem 4rem;
+    opacity: .9;
+    z-index: 100;
     & svg {
-        fill: white;
-    };
+        fill: white
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+        transition: height .5s ease;
+    }
 }
