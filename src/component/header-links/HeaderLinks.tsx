@@ -19,7 +19,7 @@ const headerLinks: IHeaderLinks[] = [
     { id: 0, title: 'главная', path: '' },
     { id: 1, title: 'новинки', path: '/newfilms' },
     { id: 2, title: 'топ-250', path: '/topfilms' },
-    { id: 3, title: 'поиск', path: '/search'}
+    { id: 3, title: 'поиск', path: '/search' },
 ];
 
 export const HeaderLinks: React.FC = () => {
@@ -48,6 +48,7 @@ export const HeaderLinks: React.FC = () => {
                 isActive ? style.isActive : undefined
             }
             end
+            onClick={toggleDrawer(false)}
         >
             {title}
         </NavLink>

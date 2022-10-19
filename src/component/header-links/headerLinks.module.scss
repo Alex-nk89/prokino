@@ -47,18 +47,15 @@
         min-height: 3rem;
         padding: .5rem 2rem;
         text-decoration: none;
-        color: blue;
-        // color: $secondary-text-color;
-        // &::first-letter {
-        //     text-transform: uppercase;
-        // }
     }
     &__logo_wrapper {
         display: flex;
         justify-content: flex-start;
         max-width: 180px;
         padding: .5rem 1.5rem;
-        color: white;
+        svg {
+            fill: white;
+        }
     }
     .isActive {
         color: $main-color;
