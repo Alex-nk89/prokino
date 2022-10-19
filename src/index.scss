@@ -4,6 +4,16 @@
 html {
     background: $bg-color;
     color: white;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #8c8c8c00;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #8c8c8c4c;
+        border-radius: 8px;
+    }
 }
 
 body {
