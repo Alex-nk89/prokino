@@ -45,7 +45,7 @@ export const SearchResultItem: FC<ISearchResultItem> = ({
                     </div>
                     <div className={style.searchResultItem__rating}>
                         <Star sx={{ color: MAIN_COLOR }} />
-                        {ratingKinopoisk} / 10
+                        {ratingKinopoisk || '-'} / 10
                     </div>
                 </div>
             </NavLink>
