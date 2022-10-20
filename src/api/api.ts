@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { IFilm, IFilmSearchByFiltersResponse, IImageResponse, IPremiere, TypeImagesForFilm } from '../models';
+import { IFilm, IFilmSearchByFiltersResponse, IImageResponse, IPremiere, TypeImagesForFilm, IStaffResponse } from '../models';
 
 const API_URL = 'https://kinopoiskapiunofficial.tech/api';
 
@@ -59,4 +59,14 @@ export const FilmApi = {
             signal: abortController.signal
         })
     },
+    getActorsInFilm: async (kinopoiskId: number) => {
+        return axios<IStaffResponse[]>({
+            url: 'v1/staff',
+            headers,
+            params: {
+                filmId: kinopoiskId
+            },
+            // signal: abortController.signal
+        })
+    }
 }

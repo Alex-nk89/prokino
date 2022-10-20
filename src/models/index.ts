@@ -99,3 +99,13 @@ export interface IFilmSearchByFiltersResponse {
     totalPages: number;
     items: IFilmSearchByFilters[]
 }
+
+export interface IStaffResponse {
+    staffId: number;
+    nameRu?: string;
+    nameEn?: string;
+    description?: string;
+    posterUrl: string;
+    professionText: string;
+    professionKey: 'WRITER' | 'OPERATOR' | 'EDITOR' | 'COMPOSER' | 'PRODUCER_USSR' | 'TRANSLATOR' | 'DIRECTOR' | 'DESIGN' | 'PRODUCER' | 'ACTOR' | 'VOICE_DIRECTOR' | 'UNKNOWN'
+}

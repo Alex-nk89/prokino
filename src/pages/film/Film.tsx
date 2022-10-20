@@ -23,10 +23,38 @@ export const Film: FC = () => {
 
     const {
         data: film,
-        //isLoading,
         isError,
         error,
     } = useQuery(['film'], () => FilmApi.getFilm(Number(kinopoiskId)));
+    const { data: staff } = useQuery(['actors', kinopoiskId], () =>
+        FilmApi.getActorsInFilm(Number(kinopoiskId))
+    );
+
+    const filmLength = film?.data.filmLength || '-';
+    const countries =
+        film?.data.countries.map(({ country }) => country).join(', ') || '-';
+    const genres =
+        film?.data.genres.map(({ genre }) => genre).join(', ') || '-';
+    const director =
+        staff?.data
+            .filter(({ professionKey }) => professionKey === 'DIRECTOR')
+            .slice(0, 3)
+            .map(({ nameRu }) => nameRu)
+            .join(', ') || '-';
+    const writers =
+        staff?.data
+            .filter(({ professionKey }) => professionKey === 'WRITER')
+            .slice(0, 3)
+            .map(({ nameRu }) => nameRu)
+            .join(', ') || '-';
+    const actors =
+        staff?.data
+            .filter(({ professionKey }) => professionKey === 'ACTOR')
+            .slice(0, 5)
+            .map(({ nameRu }) => nameRu)
+            .join(', ') || '-';
+
+    console.log(staff?.data);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const description = (
@@ -46,31 +74,23 @@ export const Film: FC = () => {
     const detailsList: IDetail[] = useMemo(
         () => [
             { key: 'Год релиза', value: film?.data.year || '-' },
-            {
-                key: 'Страна',
-                value:
-                    film?.data.countries
-                        .map(({ country }) => country)
-                        .join(', ') || '-',
-            },
-            {
-                key: 'Жанр',
-                value:
-                    film?.data.genres.map(({ genre }) => genre).join(', ') ||
-                    '-',
-            },
+            { key: 'Страна', value: countries },
+            { key: 'Жанр', value: genres },
             { key: 'Слоган', value: film?.data.slogan || '-' },
-            {
-                key: 'Продолжительность',
-                value: `${film?.data.filmLength} мин.`,
-            },
+            { key: 'Продолжительность', value: `${filmLength} мин.` },
+            { key: 'Режиссер', value: director },
+            { key: 'Сценарист', value: writers },
+            { key: 'Актеры', value: actors },
         ],
         [
-            film?.data.countries,
-            film?.data.filmLength,
-            film?.data.genres,
-            film?.data.slogan,
             film?.data.year,
+            film?.data.slogan,
+            countries,
+            genres,
+            filmLength,
+            director,
+            writers,
+            actors,
         ]
     );
 
