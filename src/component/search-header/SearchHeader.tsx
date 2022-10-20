@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { useMediaQuery, TextField, MenuItem, Button } from '@mui/material';
 import { INPUT_STYLE, BUTTON_STYLE } from '../../constants';
 import style from './searchHeader.module.scss';

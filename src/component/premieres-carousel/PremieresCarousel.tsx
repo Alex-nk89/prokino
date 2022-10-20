@@ -3,6 +3,7 @@ import { FilmApi } from '../../api/api';
 import { useQuery } from '@tanstack/react-query';
 import { Carousel } from '../common/carousel/Carousel';
 import style from './premieres-carousel.module.scss';
+import React from "react";
 
 export const PremieresCarousel: React.FC = () => {
     const { data } = useQuery(['premieres'], () => FilmApi.getPremiers());

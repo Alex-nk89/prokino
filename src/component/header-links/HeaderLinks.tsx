@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Box, IconButton, SwipeableDrawer } from '@mui/material';
 import { Menu } from '@mui/icons-material';
@@ -13,7 +13,7 @@ interface IHeaderLinks {
 }
 
 const linksWrapperStyle = { display: { xs: 'none', md: 'flex' } };
-const menuBttonStyle = { display: { md: 'none' } };
+const menuButtonStyle = { display: { md: 'none' } };
 
 const headerLinks: IHeaderLinks[] = [
     { id: 0, title: 'главная', path: '' },
@@ -62,7 +62,7 @@ export const HeaderLinks: React.FC = () => {
 
             <Box
                 className={style.header_links}
-                sx={menuBttonStyle}
+                sx={menuButtonStyle}
                 onClick={toggleDrawer(true)}
             >
                 <IconButton>

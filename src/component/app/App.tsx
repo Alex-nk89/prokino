@@ -14,7 +14,7 @@ function App() {
             <Container
                 maxWidth='md'
                 className={style.container}
-                sx={{ paddingTop: '8rem' }}
+                sx={{ paddingTop: { xs: '6rem', md: '8rem' } }}
             >
                 <Routes>
                     <Route path='/' element={<Home />} />

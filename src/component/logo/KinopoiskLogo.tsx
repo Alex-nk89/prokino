@@ -30,8 +30,8 @@ export const KinopoiskLogo: React.FC = memo(() => {
                     y2='298.701'
                     gradientUnits='userSpaceOnUse'
                 >
-                    <stop stop-color='#FF5500' />
-                    <stop offset='1' stop-color='#BBFF00' />
+                    <stop stopColor='#FF5500' />
+                    <stop offset='1' stopColor='#BBFF00' />
                 </linearGradient>
                 <linearGradient
                     id='paint1_linear_1_70'
@@ -41,8 +41,8 @@ export const KinopoiskLogo: React.FC = memo(() => {
                     y2='298.701'
                     gradientUnits='userSpaceOnUse'
                 >
-                    <stop stop-color='#FF5500' />
-                    <stop offset='1' stop-color='#BBFF00' />
+                    <stop stopColor='#FF5500' />
+                    <stop offset='1' stopColor='#BBFF00' />
                 </linearGradient>
                 <linearGradient
                     id='paint2_linear_1_70'
@@ -52,8 +52,8 @@ export const KinopoiskLogo: React.FC = memo(() => {
                     y2='298.701'
                     gradientUnits='userSpaceOnUse'
                 >
-                    <stop stop-color='#FF5500' />
-                    <stop offset='1' stop-color='#BBFF00' />
+                    <stop stopColor='#FF5500' />
+                    <stop offset='1' stopColor='#BBFF00' />
                 </linearGradient>
             </defs>
         </svg>
