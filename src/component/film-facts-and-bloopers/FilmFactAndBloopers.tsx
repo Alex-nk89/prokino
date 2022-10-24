@@ -44,9 +44,7 @@ export const FilmFactAndBloopers: FC<{ id: number }> = ({ id }) => {
 
     if (data?.data.items.length === 0) {
         return (
-            <Typography variant='body2'>
-                Ошибки и факты отсуствуют...
-            </Typography>
+            <Typography variant='body2'>Ошибки и факты отсуствуют..</Typography>
         );
     }
 
