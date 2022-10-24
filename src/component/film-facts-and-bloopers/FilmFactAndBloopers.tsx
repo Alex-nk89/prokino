@@ -1,17 +1,11 @@
 import { FilmApi } from '../../api/api';
 import style from './filmFactsAndBloopers.module.scss';
-import {
-    Typography,
-    Switch,
-    FormControlLabel,
-    Box,
-    Alert,
-} from '@mui/material';
+import { Typography, Switch, FormControlLabel, Alert } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import React, { FC, useState } from 'react';
 
 export const FilmFactAndBloopers: FC<{ id: number }> = ({ id }) => {
-    const { data, isError, error } = useQuery(['facts', id], () =>
+    const { data, isError } = useQuery(['facts', id], () =>
         FilmApi.getFactsAndBlooper(id)
     );
 
@@ -41,6 +35,12 @@ export const FilmFactAndBloopers: FC<{ id: number }> = ({ id }) => {
             </Alert>
         );
     });
+
+    if (isError) {
+        return (
+            <Typography variant='body2'>Ошибки и факты отсуствуют..</Typography>
+        );
+    }
 
     if (data?.data.items.length === 0) {
         return (
