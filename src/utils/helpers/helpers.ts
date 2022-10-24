@@ -23,4 +23,8 @@ export const filterStaff = (staffList: IStaffResponse[] | undefined, key: string
 
     return staffList.filter(({  professionKey }) => professionKey === key).slice(0, count).map(({ nameRu }) => nameRu).join(', ')
 }
+
+export const removeLinksFromText = (text: string) => {
+    return text.replace(/<[\d\w\s="//>]+/ig, '').replace(/&#[\d;]+/ig, '')
+}
     
