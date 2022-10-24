@@ -6,13 +6,7 @@ import {
     InfoOutlined,
     ErrorOutline,
 } from '@mui/icons-material';
-import {
-    Typography,
-    Switch,
-    FormControlLabel,
-    Alert,
-    Divider,
-} from '@mui/material';
+import { Typography, Switch, FormControlLabel, Divider } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import React, { FC, useMemo, useState } from 'react';
 
@@ -39,14 +33,6 @@ export const FilmFactAndBloopers: FC<{ id: number }> = ({ id }) => {
             label='Показывать спойлеры'
         />
     ) : null;
-
-    // const factsAndBloopersList = data?.data.items.map((item) => {
-    //     return (
-    //         <Alert severity={item.type === 'FACT' ? 'success' : 'error'}>
-    //             <Typography>{item.text}</Typography>
-    //         </Alert>
-    //     );
-    // });
 
     const factsAndBloopersList = useMemo(() => {
         return data?.data.items.map(({ spoiler, text, type }) => {
