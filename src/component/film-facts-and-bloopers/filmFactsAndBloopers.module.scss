@@ -1,0 +1,10 @@
+.facts_and_bloopers_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__facts {
+        padding: 0 1rem;
+        border-left: 3px solid gray;
+    }
+}

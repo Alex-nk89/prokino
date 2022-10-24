@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { IFilm, IFilmSearchByFiltersResponse, IImageResponse, IPremiere, TypeImagesForFilm, IStaffResponse } from '../models';
+import { IFilm, IFilmSearchByFiltersResponse, IImageResponse, IPremiere, TypeImagesForFilm, IStaffResponse, IFactResponse } from '../models';
 
 const API_URL = 'https://kinopoiskapiunofficial.tech/api';
 
@@ -67,6 +67,15 @@ export const FilmApi = {
                 filmId: kinopoiskId
             },
             // signal: abortController.signal
+        })
+    },
+    getFactsAndBlooper: async (kinopoiskId: number) => {
+        return axios<IFactResponse>({
+            url: `v2.2/films/${kinopoiskId}/facts`,
+            headers,
+            params: {
+                id: kinopoiskId
+            }
         })
     }
 }
