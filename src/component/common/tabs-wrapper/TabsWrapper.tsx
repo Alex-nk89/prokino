@@ -1,6 +1,6 @@
-import { FC, useState, useMemo } from 'react';
-import { Tabs, Tab, Box } from '@mui/material';
 import style from './tabsWrapper.module.scss';
+import { Tabs, Tab, Box } from '@mui/material';
+import { FC, useState, useMemo } from 'react';
 
 interface ITabsWrapper {
     tabsNames: string[];
@@ -58,6 +58,7 @@ export const TabsWrapper: FC<ITabsWrapper> = ({ tabsNames, tabsContains }) => {
             <Box sx={tabWrapperStyle}>
                 <Tabs
                     scrollButtons='auto'
+                    variant='scrollable'
                     value={tabIndex}
                     onChange={tabIndexHandler}
                     className={style.tabPanel}
