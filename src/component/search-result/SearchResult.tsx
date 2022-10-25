@@ -1,9 +1,10 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { Pagination, Skeleton } from '@mui/material';
+import {Pagination, Skeleton, Typography} from '@mui/material';
 import { FilmApi } from '../../api/api';
 import { SearchResultItem } from '../search-result-item/SearchResultItem';
 import style from './searchResult.module.scss';
+import {InfoBlock} from "../common/info-block/InfoBlock";
 
 interface ISearchResult {
     keyword: string;
@@ -48,6 +49,10 @@ export const SearchResult: FC<ISearchResult> = ({
 
     if (isError) {
         return <div>Не удалось загрузить данные.</div>;
+    }
+
+    if(result?.data.total === 0) {
+        return <InfoBlock><Typography variant='body2'>Поиск не дал результатов.</Typography></InfoBlock>
     }
 
     return (
