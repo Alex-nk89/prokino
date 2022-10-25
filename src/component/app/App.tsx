@@ -1,10 +1,10 @@
-import { Route, Routes } from 'react-router-dom';
-import { Container } from '@mui/material';
-import { Header } from '../layout/header/Header';
+import { FilmPage } from '../../pages/film/FilmPage';
 import { Home } from '../../pages/home/Home';
-import { Film } from '../../pages/film/Film';
 import { Search } from '../../pages/search/Search';
+import { Header } from '../layout/header/Header';
 import style from './app.module.scss';
+import { Container } from '@mui/material';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
     return (
@@ -18,7 +18,7 @@ function App() {
             >
                 <Routes>
                     <Route path='/' element={<Home />} />
-                    <Route path='/film/:kinopoiskId' element={<Film />} />
+                    <Route path='/film/:kinopoiskId' element={<FilmPage />} />
                     <Route path='/search' element={<Search />} />
                 </Routes>
             </Container>

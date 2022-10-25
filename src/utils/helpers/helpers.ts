@@ -1,4 +1,4 @@
-import { ICountry, IGenre, IStaffResponse } from "../../models"
+import { ICountry, IGenre, IStaffResponse, IFilm } from "../../models"
 
 export const convertingGenreListToString = (list: IGenre[] | undefined): string => {
     if(typeof(list) === 'undefined') {
@@ -26,5 +26,22 @@ export const filterStaff = (staffList: IStaffResponse[] | undefined, key: string
 
 export const removeLinksFromText = (text: string) => {
     return text.replace(/<[\d\w\s="//>]+/ig, '').replace(/&#[\d;]+/ig, '')
+}
+
+export const getDataListForFilmPage = (filmInfo: IFilm | undefined, staffInfo: IStaffResponse[] | undefined): { key: string, value: string}[] => {
+    if(typeof(filmInfo) === 'undefined') {
+        return []
+    }
+
+    return [
+        { key: 'Год релиза', value: `${filmInfo.year}` || '-' },
+        { key: 'Страна', value: convertingCountryListToString(filmInfo.countries)},
+        { key: 'Жанр', value: convertingGenreListToString(filmInfo.genres)},
+        { key: 'Слоган', value: filmInfo.slogan || '-' },
+        { key: 'Продолжительность', value: `${filmInfo.filmLength || '-'} мин.` },
+        { key: 'Режиссер', value: filterStaff(staffInfo, 'DIRECTOR', 3) },
+        { key: 'Сценарист', value: filterStaff(staffInfo, 'WRITER', 3) },
+        { key: 'Актеры', value: filterStaff(staffInfo, 'ACTOR', 5) },
+    ]
 }
     

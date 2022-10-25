@@ -1,6 +1,7 @@
 .film_wrapper {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     &_header {
         display: flex;
         justify-content: center;

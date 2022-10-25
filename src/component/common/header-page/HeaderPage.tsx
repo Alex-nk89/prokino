@@ -1,25 +1,27 @@
-import { FC } from 'react';
 import { Details, IDetail } from '../details/Details';
-import { Typography } from '@mui/material';
 import { Poster } from '../poster/Poster';
-import style from './headerWithoutCover.module.scss';
+import style from './headerPage.module.scss';
+import { Skeleton } from '@mui/material';
+import { FC } from 'react';
 
-interface IHeader {
+interface IHeaderPage {
     detailsList: IDetail[];
-    title: string;
     posterUrl: string;
     titleForDetail?: string;
+    isLoading?: boolean;
 }
 
-export const HeaderWithoutCover: FC<IHeader> = ({
-    title,
+export const HeaderPage: FC<IHeaderPage> = ({
     posterUrl,
     detailsList,
     titleForDetail,
+    isLoading,
 }) => {
+    if (isLoading) {
+        return <Skeleton height={400} variant='rounded' />;
+    }
     return (
-        <div className={style.cover}>
-            <Typography variant='h3'>{title}</Typography>
+        <section className={style.cover}>
             <div className={style.cover_details}>
                 <Poster
                     src={posterUrl}
@@ -29,6 +31,6 @@ export const HeaderWithoutCover: FC<IHeader> = ({
                 />
                 <Details details={detailsList} title={titleForDetail} />
             </div>
-        </div>
+        </section>
     );
 };
