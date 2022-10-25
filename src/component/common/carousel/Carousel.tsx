@@ -14,14 +14,14 @@ const arrowStyle = {
     position: 'absolute',
     transform: 'translateY(-50%)',
     top: '50%',
-    zIndex: '9999'
+    zIndex: '10'
 }
 
 const PrevArrow: FC<CustomArrowProps> = (props) => {
     const { onClick } = props;
 
     // @ts-ignore
-    return <div onClick={onClick} style={arrowStyle}><ArrowBackIosNew sx={{ fill: MAIN_COLOR}}/></div>
+    return <div onClick={onClick} style={arrowStyle}><ArrowBackIosNew sx={{ fill: MAIN_COLOR }}/></div>
 }
 
 const NextArrow: FC<CustomArrowProps> = (props) => {
