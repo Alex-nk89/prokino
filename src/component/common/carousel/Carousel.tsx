@@ -1,7 +1,34 @@
 import Slider from 'react-slick';
+import React, {FC} from "react";
+import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material'
+import { MAIN_COLOR} from "../../../constants";
+
+// @ts-ignore
+import { CustomArrowProps } from '@types/react-slick'
 
 interface Props {
     items: JSX.Element[] | undefined;
+}
+
+const arrowStyle = {
+    position: 'absolute',
+    transform: 'translateY(-50%)',
+    top: '50%',
+    zIndex: '9999'
+}
+
+const PrevArrow: FC<CustomArrowProps> = (props) => {
+    const { onClick } = props;
+
+    // @ts-ignore
+    return <div onClick={onClick} style={arrowStyle}><ArrowBackIosNew sx={{ fill: MAIN_COLOR}}/></div>
+}
+
+const NextArrow: FC<CustomArrowProps> = (props) => {
+    const { onClick } = props;
+
+    // @ts-ignore
+    return <div onClick={onClick} style={{...arrowStyle, right: 0 }}><ArrowForwardIos sx={{ fill: MAIN_COLOR}}/></div>
 }
 
 const settings = {
@@ -22,7 +49,11 @@ const settings = {
             },
         },
     ],
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />
 };
+
+
 
 export const Carousel: React.FC<Props> = ({ items }) => {
     const cards = items?.map((card) => card);
