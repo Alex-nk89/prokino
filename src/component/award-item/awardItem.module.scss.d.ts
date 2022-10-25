@@ -1,0 +1,1 @@
+export const award_item: string;

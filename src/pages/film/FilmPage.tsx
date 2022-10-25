@@ -4,6 +4,7 @@ import { Error } from '../../component/common/error/Error';
 import { HeaderPage } from '../../component/common/header-page/HeaderPage';
 import { InfoBlock } from '../../component/common/info-block/InfoBlock';
 import { TabsWrapper } from '../../component/common/tabs-wrapper/TabsWrapper';
+import { FilmAwards } from '../../component/film-awards/FilmAwards';
 import { FilmFactAndBloopers } from '../../component/film-facts-and-bloopers/FilmFactAndBloopers';
 import { FilmImages } from '../../component/film-images/FilmImages';
 import { FilmRating } from '../../component/film-rating/FilmRating';
@@ -15,7 +16,7 @@ import { AxiosError } from 'axios';
 import { useMemo, FC } from 'react';
 import { useParams } from 'react-router-dom';
 
-const tabsNames = ['Обзор', 'Кадры', 'Рейтинг', 'Факты и ошибки'];
+const tabsNames = ['Обзор', 'Кадры', 'Рейтинг', 'Факты и ошибки', 'Награды'];
 
 export const FilmPage: FC = () => {
     const { kinopoiskId } = useParams();
@@ -89,6 +90,11 @@ export const FilmPage: FC = () => {
         [kinopoiskId]
     );
 
+    const filmAwards = useMemo(
+        () => <FilmAwards kinopoiskId={Number(kinopoiskId)} />,
+        [kinopoiskId]
+    );
+
     if (isError) {
         return <Error error={error as AxiosError} />;
     }
@@ -99,6 +105,7 @@ export const FilmPage: FC = () => {
             filmImages,
             filmRating,
             factsAndBloopers,
+            filmAwards,
         ];
 
         return (
@@ -126,6 +133,9 @@ export const FilmPage: FC = () => {
             <InfoBlock title='Рейтинг'>{filmRating}</InfoBlock>
             <InfoBlock title='Факты и Ошибки' maxHeightCSS={300}>
                 {factsAndBloopers}
+            </InfoBlock>
+            <InfoBlock title='Награды' maxHeightCSS={300}>
+                {filmAwards}
             </InfoBlock>
         </div>
     );
