@@ -25,7 +25,7 @@ export const filterStaff = (staffList: IStaffResponse[] | undefined, key: string
 }
 
 export const removeLinksFromText = (text: string) => {
-    return text.replace(/<[\d\w\s="//>]+/ig, '').replace(/&#[\d;]+/ig, '')
+    return text.replace(/<[\w\s="/>]+/ig, ' ').replace(/&#[\d;]+/ig, '')
 }
 
 export const getDataListForFilmPage = (filmInfo: IFilm | undefined, staffInfo: IStaffResponse[] | undefined): { key: string, value: string}[] => {
