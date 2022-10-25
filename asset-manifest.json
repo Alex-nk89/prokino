@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/prokino/static/css/main.02e3df61.css",
-    "main.js": "/prokino/static/js/main.c308a6e9.js",
+    "main.css": "/prokino/static/css/main.8b651bbf.css",
+    "main.js": "/prokino/static/js/main.4a3baad7.js",
     "static/js/787.62e611fb.chunk.js": "/prokino/static/js/787.62e611fb.chunk.js",
     "static/media/SFUIDisplay-Light.woff": "/prokino/static/media/SFUIDisplay-Light.c6860a788d121eef79b4.woff",
     "static/media/SFUIDisplay-Medium.woff": "/prokino/static/media/SFUIDisplay-Medium.d2d5d05fb447c5d7853c.woff",
     "static/media/SFUIDisplay-Bold.woff": "/prokino/static/media/SFUIDisplay-Bold.aee3e2b037ed6cc3cdf9.woff",
     "static/media/SFUIDisplay-Regular.woff": "/prokino/static/media/SFUIDisplay-Regular.83ecbdc39e4e4e337b56.woff",
     "index.html": "/prokino/index.html",
-    "main.02e3df61.css.map": "/prokino/static/css/main.02e3df61.css.map",
-    "main.c308a6e9.js.map": "/prokino/static/js/main.c308a6e9.js.map",
+    "main.8b651bbf.css.map": "/prokino/static/css/main.8b651bbf.css.map",
+    "main.4a3baad7.js.map": "/prokino/static/js/main.4a3baad7.js.map",
     "787.62e611fb.chunk.js.map": "/prokino/static/js/787.62e611fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.02e3df61.css",
-    "static/js/main.c308a6e9.js"
+    "static/css/main.8b651bbf.css",
+    "static/js/main.4a3baad7.js"
   ]
 }
