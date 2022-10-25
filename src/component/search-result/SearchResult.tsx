@@ -5,6 +5,7 @@ import { FilmApi } from '../../api/api';
 import { SearchResultItem } from '../search-result-item/SearchResultItem';
 import style from './searchResult.module.scss';
 import {InfoBlock} from "../common/info-block/InfoBlock";
+import {MAIN_COLOR} from "../../constants";
 
 interface ISearchResult {
     keyword: string;
@@ -40,6 +41,7 @@ export const SearchResult: FC<ISearchResult> = ({
                 shape='rounded'
                 page={page}
                 onChange={pageHandler}
+                sx={{ '& .Mui-selected': { backgroundColor: MAIN_COLOR}}}
             />
         );
 
