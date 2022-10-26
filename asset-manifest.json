@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/prokino/static/css/main.7de3f2ef.css",
+    "main.css": "/prokino/static/css/main.d853426c.css",
     "main.js": "/prokino/static/js/main.49e2c16e.js",
     "static/js/787.62e611fb.chunk.js": "/prokino/static/js/787.62e611fb.chunk.js",
     "static/media/SFUIDisplay-Light.woff": "/prokino/static/media/SFUIDisplay-Light.c6860a788d121eef79b4.woff",
@@ -8,12 +8,12 @@
     "static/media/SFUIDisplay-Bold.woff": "/prokino/static/media/SFUIDisplay-Bold.aee3e2b037ed6cc3cdf9.woff",
     "static/media/SFUIDisplay-Regular.woff": "/prokino/static/media/SFUIDisplay-Regular.83ecbdc39e4e4e337b56.woff",
     "index.html": "/prokino/index.html",
-    "main.7de3f2ef.css.map": "/prokino/static/css/main.7de3f2ef.css.map",
+    "main.d853426c.css.map": "/prokino/static/css/main.d853426c.css.map",
     "main.49e2c16e.js.map": "/prokino/static/js/main.49e2c16e.js.map",
     "787.62e611fb.chunk.js.map": "/prokino/static/js/787.62e611fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7de3f2ef.css",
+    "static/css/main.d853426c.css",
     "static/js/main.49e2c16e.js"
   ]
 }
