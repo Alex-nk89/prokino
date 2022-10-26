@@ -1,4 +1,4 @@
-import { Film } from "../../pages/film/Film";
+import { Film } from "../../pages/film/Film"
 import { Home } from "../../pages/home/Home";
 import { Search } from "../../pages/search/Search";
 import { Header } from "../layout/header/Header";

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import {Typography, useMediaQuery} from '@mui/material';
+import {Typography} from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import style from './details.module.scss';
 import React from 'react';
