@@ -44,7 +44,7 @@ export const filterStaff = (
 };
 
 export const removeLinksFromText = (text: string) => {
-  return text.replace(/<[\d\w\s="//>]+/gi, "").replace(/&#[\d;]+/gi, "");
+  return text.replace(/<[\w\s="/>]+/gi, " ").replace(/&#[\d;]+/gi, "");
 };
 
 export const getDataListForFilmPage = (
