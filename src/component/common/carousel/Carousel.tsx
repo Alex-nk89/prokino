@@ -14,7 +14,8 @@ const arrowStyle = {
     position: 'absolute',
     transform: 'translateY(-50%)',
     top: '50%',
-    zIndex: '10'
+    zIndex: '10',
+    cursor: 'pointer'
 }
 
 const PrevArrow: FC<CustomArrowProps> = (props) => {
