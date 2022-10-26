@@ -1,4 +1,4 @@
-import { FilmPage } from "../../pages/film/FilmPage";
+import { Film } from "../../pages/film/Film";
 import { Home } from "../../pages/home/Home";
 import { Search } from "../../pages/search/Search";
 import { Header } from "../layout/header/Header";
@@ -20,7 +20,7 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/film/:kinopoiskId" element={<FilmPage />} />
+          <Route path="/film/:kinopoiskId" element={<Film />} />
           <Route path="/search" element={<Search />} />
         </Routes>
       </Container>

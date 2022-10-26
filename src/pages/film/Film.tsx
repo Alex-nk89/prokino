@@ -18,7 +18,7 @@ import { useParams } from "react-router-dom";
 
 const tabsNames = ["Обзор", "Кадры", "Рейтинг", "Факты и ошибки", "Награды"];
 
-export const FilmPage: FC = () => {
+export const Film: FC = () => {
   const { kinopoiskId } = useParams();
   const isDesktop = useMediaQuery("(min-width:600px)");
 
