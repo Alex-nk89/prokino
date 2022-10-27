@@ -7,6 +7,9 @@ import { Error } from '../../component/common/error/Error';
 import { HeaderPage } from '../../component/common/header-page/HeaderPage';
 import { InfoBlock } from '../../component/common/info-block/InfoBlock';
 import { TabsWrapper } from '../../component/common/tabs-wrapper/TabsWrapper';
+import { FilmImages } from '../../component/film-images/FilmImages';
+import { FilmRating } from '../../component/film-rating/FilmRating';
+import { FilmFacts } from '../../component/film-facts-and-bloopers/FilmFact';
 
 import { useFilmData } from '../../hooks/useFilmData';
 import { getDataListForFilmPage } from '../../utils/helpers/helpers';
@@ -64,6 +67,26 @@ export const Film: FC = () => {
         [filmDescription, filmShortDescription]
     );
 
+    const filmImages = useMemo(
+        () => <FilmImages kinopoiskId={Number(kinopoiskId)} />,
+        [kinopoiskId]
+    );
+
+    const filmRating = useMemo(
+        () => <FilmRating rating={filmInfo} />,
+        [filmInfo]
+    );
+
+    const filmFacts = useMemo(
+        () => (
+            <FilmFacts
+                kinopoiskId={Number(kinopoiskId)}
+                isDesktop={isDesktop}
+            />
+        ),
+        [kinopoiskId, isDesktop]
+    );
+
     if (isError) {
         return <Error error={error as AxiosError} />;
     }
@@ -71,9 +94,9 @@ export const Film: FC = () => {
     if (isDesktop) {
         const tabsContains = [
             description,
-            //       filmImages,
-            //       filmRating,
-            //       factsAndBloopers,
+            filmImages,
+            filmRating,
+            filmFacts,
             //       filmAwards,
         ];
 
@@ -102,6 +125,10 @@ export const Film: FC = () => {
             >
                 {description}
             </InfoBlock>
+
+            <InfoBlock title='Кадры'>{filmImages}</InfoBlock>
+            <InfoBlock title='Рейтинг'>{filmRating}</InfoBlock>
+            <InfoBlock title='Факты'>{filmFacts}</InfoBlock>
         </div>
     );
 };
