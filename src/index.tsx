@@ -34,17 +34,16 @@ const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
-    <React.StrictMode>
-        <ThemeProvider theme={theme}>
-            <BrowserRouter basename='/prokino'>
-                <CssBaseline />
-                <QueryClientProvider client={queryClient}>
-                    <App />
-                    <ReactQueryDevtools initialIsOpen={false} />
-                </QueryClientProvider>
-            </BrowserRouter>
-        </ThemeProvider>
-    </React.StrictMode>
+    <ThemeProvider theme={theme}>
+        <BrowserRouter basename='/prokino'>
+            <CssBaseline />
+
+            <QueryClientProvider client={queryClient}>
+                <App />
+                <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
+        </BrowserRouter>
+    </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
