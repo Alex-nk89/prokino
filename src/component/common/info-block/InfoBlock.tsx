@@ -17,7 +17,7 @@ interface Props {
 export const InfoBlock: React.FC<Props> = ({
     children,
     title,
-    maxHeightCSS = 200,
+    maxHeightCSS = 9999,
     isLoading,
     action,
     link,

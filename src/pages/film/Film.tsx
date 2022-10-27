@@ -6,12 +6,15 @@ import { Typography, useMediaQuery, Box } from '@mui/material';
 import { Error } from '../../component/common/error/Error';
 import { HeaderPage } from '../../component/common/header-page/HeaderPage';
 import { InfoBlock } from '../../component/common/info-block/InfoBlock';
+import { TabsWrapper } from '../../component/common/tabs-wrapper/TabsWrapper';
 
 import { useFilmData } from '../../hooks/useFilmData';
 import { getDataListForFilmPage } from '../../utils/helpers/helpers';
 import { IDetail } from '../../component/common/details-isDesktop/DetailsIsDesktop';
 
 import style from './film.module.scss';
+
+const tabsNames = ['Обзор', 'Кадры', 'Рейтинг', 'Факты и ошибки', 'Награды'];
 
 export const Film: FC = () => {
     const { kinopoiskId } = useParams();
@@ -66,10 +69,24 @@ export const Film: FC = () => {
     }
 
     if (isDesktop) {
+        const tabsContains = [
+            description,
+            //       filmImages,
+            //       filmRating,
+            //       factsAndBloopers,
+            //       filmAwards,
+        ];
+
         return (
             <div className={style.film_wrapper}>
                 {title}
                 {headerPage}
+                <InfoBlock>
+                    <TabsWrapper
+                        tabsNames={tabsNames}
+                        tabsContains={tabsContains}
+                    />
+                </InfoBlock>
             </div>
         );
     }
@@ -77,7 +94,12 @@ export const Film: FC = () => {
     return (
         <div className={style.film_wrapper}>
             {headerPage}
-            <InfoBlock isLoading={isFetching} title='Описание' action='open'>
+            <InfoBlock
+                isLoading={isFetching}
+                title='Описание'
+                action='open'
+                maxHeightCSS={200}
+            >
                 {description}
             </InfoBlock>
         </div>
