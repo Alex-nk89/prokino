@@ -1,10 +1,11 @@
 import { FC, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { AxiosError } from 'axios';
-import { Typography, useMediaQuery } from '@mui/material';
+import { Typography, useMediaQuery, Box } from '@mui/material';
 
 import { Error } from '../../component/common/error/Error';
 import { HeaderPage } from '../../component/common/header-page/HeaderPage';
+import { InfoBlock } from '../../component/common/info-block/InfoBlock';
 
 import { useFilmData } from '../../hooks/useFilmData';
 import { getDataListForFilmPage } from '../../utils/helpers/helpers';
@@ -22,6 +23,8 @@ export const Film: FC = () => {
 
     const nameRu = filmInfo?.nameRu;
     const posterUrl = filmInfo?.posterUrl || '';
+    const filmDescription = filmInfo?.description || 'Описание отсутствует.';
+    const filmShortDescription = filmInfo?.shortDescription || '';
 
     const detailsList: IDetail[] = useMemo(
         () => getDataListForFilmPage(filmInfo, staffInfo),
@@ -47,6 +50,17 @@ export const Film: FC = () => {
         [isDesktop, isFetching, detailsList, nameRu, posterUrl]
     );
 
+    const description = useMemo(
+        () => (
+            <Box>
+                <Typography variant='body1'>{filmShortDescription}</Typography>
+                <br />
+                <Typography variant='body2'>{filmDescription}</Typography>
+            </Box>
+        ),
+        [filmDescription, filmShortDescription]
+    );
+
     if (isError) {
         return <Error error={error as AxiosError} />;
     }
@@ -60,7 +74,14 @@ export const Film: FC = () => {
         );
     }
 
-    return <div className={style.film_wrapper}>{headerPage}</div>;
+    return (
+        <div className={style.film_wrapper}>
+            {headerPage}
+            <InfoBlock isLoading={isFetching} title='Описание' action='open'>
+                {description}
+            </InfoBlock>
+        </div>
+    );
 };
 
 // import { FilmApi } from "../../api/api";
