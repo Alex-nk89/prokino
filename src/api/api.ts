@@ -78,7 +78,7 @@ export const FilmApi = {
             }
         })
     },
-    getFilmAwards: async (kinopoiskId: number) => {
+    getAwards: async (kinopoiskId: number) => {
         return axios<IAwardResponse>({
             url: `v2.2/films/${kinopoiskId}/awards`,
             headers,

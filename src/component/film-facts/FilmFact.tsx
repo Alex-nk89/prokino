@@ -54,11 +54,6 @@ export const FilmFacts: FC<IFilmFacts> = ({ kinopoiskId, isDesktop }) => {
             </Alert>
         ) : null;
 
-    console.log(
-        factsList?.data.items.filter(({ spoiler }) => spoiler).length,
-        factsList?.data.items
-    );
-
     if (isError) {
         return (
             <Typography variant='body1'>Ошибки и факты отсуствуют..</Typography>

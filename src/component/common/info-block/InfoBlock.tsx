@@ -33,7 +33,11 @@ export const InfoBlock: React.FC<Props> = ({
 
     const navLink =
         action === 'link' && link ? (
-            <NavLink to={link}>{subtitle}</NavLink>
+            <NavLink to={link}>
+                <Box className={style.infoBlock__header__subtitle}>
+                    {subtitle}
+                </Box>
+            </NavLink>
         ) : null;
 
     const openHundler = () => {
@@ -42,12 +46,12 @@ export const InfoBlock: React.FC<Props> = ({
 
     const open =
         action === 'open' ? (
-            <div
+            <Box
                 onClick={openHundler}
                 className={style.infoBlock__header__subtitle}
             >
                 {subtitle}
-            </div>
+            </Box>
         ) : null;
 
     const header =
