@@ -1,0 +1,19 @@
+@import "../../../style/variables";
+
+.facts_list {
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+
+  &__header {
+    padding: 0 2rem;
+  }
+
+  &__list {
+    @media(min-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      gap: $padding-between-items-desktop;
+    }
+  }
+}

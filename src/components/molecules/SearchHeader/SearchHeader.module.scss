@@ -1,0 +1,10 @@
+@import '../../../style/variables';
+
+.searchHeader {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    @media(max-width: '600px') {
+        flex-direction: column;
+    }
+}

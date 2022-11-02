@@ -1,0 +1,13 @@
+@import "../../../style/variables";
+
+.fact_item {
+  display: flex;
+  align-items: center;
+  gap: inherit;
+
+  & svg {
+    fill: $main-color;
+    width: .7rem;
+    height: .7rem;
+  }
+}

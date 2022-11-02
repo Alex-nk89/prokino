@@ -6,10 +6,11 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import App from './component/app/App';
+import App from './components/templates/App/App';
 
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
+import { configureAxios } from './services';
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -29,6 +30,8 @@ const theme = createTheme({
         mode: 'dark',
     },
 });
+
+configureAxios();
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement

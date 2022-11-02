@@ -1,0 +1,17 @@
+@import '../../../../style/variables';
+
+.header {
+    position: fixed;
+    width: 100%;
+    padding: .5rem;
+    background: $bg-color-op80;
+    z-index: 100;
+    & svg {
+        fill: white
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+        transition: height .5s linear;
+    }
+}

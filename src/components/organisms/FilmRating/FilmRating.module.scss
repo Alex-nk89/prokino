@@ -1,0 +1,13 @@
+@import '../../../style/variables';
+
+.rating_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+
+    & svg {
+        fill: $main-color;
+    }
+}
