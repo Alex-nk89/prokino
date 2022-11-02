@@ -5,6 +5,7 @@ import { filmService } from "../../../services/filmService";
 import style from "./SearchResult.module.scss";
 import { InfoBlock, SearchResultItem } from "../../molecules";
 import { MAIN_COLOR } from "../../../constants";
+import { keys } from "../../../application/queryKeys";
 
 interface ISearchResult {
   keyword: string;
@@ -18,7 +19,7 @@ const SearchResult: FC<ISearchResult> = ({ keyword, abortController }) => {
     data: result,
     isError,
     isFetching,
-  } = useQuery(["search films", page, keyword], () =>
+  } = useQuery(keys.searchFilm(keyword, page), () =>
     filmService.getSearchedFilmsByKeyword(keyword, page, abortController)
   );
 

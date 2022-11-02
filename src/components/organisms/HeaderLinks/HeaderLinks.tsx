@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { NavLink } from "react-router-dom";
 import { Box, IconButton, SwipeableDrawer, useMediaQuery } from "@mui/material";
 import { Menu } from "@mui/icons-material";
@@ -27,9 +27,9 @@ const HeaderLinks: React.FC = () => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 900px)");
 
-  if (isDesktop) {
-    headerLinks.pop();
-  }
+  const linksList = useMemo(() => {
+    return isDesktop ? headerLinks.slice(0, -1) : headerLinks.slice(0);
+  }, [isDesktop]);
 
   const toggleDrawer =
     (isOpen: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -45,7 +45,7 @@ const HeaderLinks: React.FC = () => {
       setIsOpenMobileMenu(isOpen);
     };
 
-  const links = headerLinks.map(({ id, path, title }) => (
+  const links = linksList.map(({ id, path, title }) => (
     <NavLink
       key={id}
       to={path}

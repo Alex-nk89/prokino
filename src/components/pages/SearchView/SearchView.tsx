@@ -1,4 +1,4 @@
-import { FC, useState, useMemo } from "react";
+import React, { FC, useState, useMemo } from "react";
 import { SearchHeader } from "../../molecules";
 import { SearchResult } from "../../organisms";
 import style from "./SearchView.module.scss";

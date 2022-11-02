@@ -6,6 +6,7 @@ import { IFactResponse } from "../../../domain/fact";
 import style from "./FactsList.module.scss";
 import { FactsListItem } from "../../atoms";
 import { removeLinksFromText } from "../../../utils/common";
+import { keys } from "../../../application/queryKeys";
 
 interface IFactsList {
   typeFact: "FACT" | "BLOOPER";
@@ -15,7 +16,7 @@ interface IFactsList {
 const FactsList: FC<IFactsList> = ({ typeFact, isDesktop }) => {
   const title = typeFact === "FACT" ? "Знаете ли вы что..." : "Ошибки";
   const queryClient = useQueryClient();
-  const factsList = queryClient.getQueryData<IFactResponse>(["facts"]);
+  const factsList = queryClient.getQueryData<IFactResponse>(keys.facts);
 
   const facts = factsList?.items
     .filter(({ type }) => type === typeFact)

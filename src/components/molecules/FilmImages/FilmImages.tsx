@@ -1,14 +1,16 @@
+import { FC } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { imageService } from "../../../services/imageService";
 import { Carousel } from "../../molecules";
 import style from "./FilmImages.module.scss";
+import { keys } from "../../../application/queryKeys";
 
 interface IFilmImages {
   kinopoiskId: number;
 }
 
-const FilmImages: React.FC<IFilmImages> = ({ kinopoiskId }) => {
-  const { data: images, isError } = useQuery(["filmImages"], () =>
+const FilmImages: FC<IFilmImages> = ({ kinopoiskId }) => {
+  const { data: images, isError } = useQuery(keys.filmImages, () =>
     imageService.getFilmImages({ kinopoiskId, type: "STILL" })
   );
 

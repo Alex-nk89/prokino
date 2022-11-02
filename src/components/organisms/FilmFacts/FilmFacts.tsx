@@ -5,6 +5,7 @@ import { Typography, Box, Alert } from "@mui/material";
 import { FactsList } from "../../molecules";
 import { factsService } from "../../../services/factsService";
 import style from "./FilmFacts.module.scss";
+import { keys } from "../../../application/queryKeys";
 
 interface IFilmFacts {
   kinopoiskId: number;
@@ -12,7 +13,7 @@ interface IFilmFacts {
 }
 
 const FilmFacts: FC<IFilmFacts> = ({ kinopoiskId, isDesktop }) => {
-  const { data: factsList, isError } = useQuery(["facts"], () =>
+  const { data: factsList, isError } = useQuery(keys.facts, () =>
     factsService.getFactsAndBlooper(kinopoiskId)
   );
 

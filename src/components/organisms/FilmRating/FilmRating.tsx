@@ -8,6 +8,7 @@ import { useRatingFilm } from "../../../application/film";
 
 import { SECONDARY_TEXT_COLOR } from "../../../constants";
 import style from "./FilmRating.module.scss";
+import { keys } from "../../../application/queryKeys";
 
 const logoStyle = {
   maxWidth: "2.5rem",
@@ -23,7 +24,7 @@ const logos: { [key: string]: JSX.Element } = {
 };
 
 const FilmRating: FC = () => {
-  const ratings = useRatingFilm(["filmData"]);
+  const ratings = useRatingFilm(keys.filmData);
 
   const ratingsList = useMemo(
     () =>

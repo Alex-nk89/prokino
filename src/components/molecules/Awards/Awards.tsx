@@ -8,6 +8,7 @@ import { Carousel } from "../../molecules";
 import { awardService } from "../../../services/awardsService";
 import { MAIN_COLOR } from "../../../constants";
 import style from "./Awards.module.scss";
+import { keys } from "../../../application/queryKeys";
 
 interface IAwards {
   kinopoiskId: number;
@@ -20,7 +21,7 @@ const badgeStyle = {
 };
 
 export const Awards: FC<IAwards> = ({ kinopoiskId }) => {
-  const { data: awards, isError } = useQuery(["Awards"], () =>
+  const { data: awards, isError } = useQuery(keys.awards, () =>
     awardService.getAwards(kinopoiskId)
   );
 

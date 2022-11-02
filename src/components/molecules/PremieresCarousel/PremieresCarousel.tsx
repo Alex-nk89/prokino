@@ -4,9 +4,10 @@ import { Carousel } from "../index";
 import style from "./PremieresCarousel.module.scss";
 import React from "react";
 import { filmService } from "../../../services/filmService";
+import { keys } from "../../../application/queryKeys";
 
 const PremieresCarousel: React.FC = () => {
-  const { data } = useQuery(["premieres"], () =>
+  const { data } = useQuery(keys.premieres, () =>
     filmService.getPremieres({
       month: new Date().getMonth(),
       year: new Date().getFullYear(),
